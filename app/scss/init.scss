@@ -1,0 +1,14 @@
+/* settings */
+@import 'config/_mixins';
+@import 'config/_variables';
+@import 'config/_utils';
+
+@import 'general/_reset';
+
+/* fonts */
+@import 'fonts/_icomoon';
+
+/* pages */
+@import 'layout/_header';
+@import 'layout/_main';
+@import 'layout/_modal';

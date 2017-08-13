@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../fonts/icomoon.eot?jge7j3');
+  src:  url('../../fonts/icomoon.eot?jge7j3#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoon.ttf?jge7j3') format('truetype'),
+    url('../../fonts/icomoon.woff?jge7j3') format('woff'),
+    url('../../fonts/icomoon.svg?jge7j3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-icon:before,
+.font-icon:after{
+  content:"";
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-trash-o:before ,
+.icon-trash-o:after {
+  content: "\f014";
+}
+.icon-pencil:before ,
+.icon-pencil:after {
+  content: "\f040";
+}
+.icon-plus:before ,
+.icon-plus:after {
+  content: "\f067";
+}
+.icon-check_box:before ,
+.icon-check_box:after {
+  content: "\e834";
+}
+.icon-check_box_outline_blank:before ,
+.icon-check_box_outline_blank:after {
+  content: "\e835";
+}
+.icon-list:before ,
+.icon-list:after {
+  content: "\e900";
+}
+.icon-checkmark:before ,
+.icon-checkmark:after {
+  content: "\e901";
+}
+.icon-close:before ,
+.icon-close:after {
+  content: "\f00d";
+}

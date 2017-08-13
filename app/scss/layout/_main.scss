@@ -1,0 +1,270 @@
+body{
+    color:#333; 
+	font-family: $font-main;
+    font-size: 16px;
+    background-color: #eee;
+}
+
+*{
+	font-family: $font-main;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+	width:10px;
+	height:10px;
+	background:#eee;;
+	@include border-radius(4px);
+}
+
+::-webkit-scrollbar-thumb{
+	background-color:#96A2AF;
+}
+
+main{
+	padding-top:150px;
+	display:none;
+	&.visible{
+		display:block;
+	}
+	.content{
+		@extend .wrapper;
+		display: flex; 
+		justify-content: space-between;
+	}
+}
+
+/******************
+	RESULT LIST
+******************/
+.result-list{
+	width: 35%;
+	display:inline-block;
+	.result-list__item{
+		position: relative;
+		background: #fff;
+		border: 1px solid #efefef;
+		padding: 12px 20px;
+		width: 100%;
+		font-size: em(16);
+		cursor: pointer;
+		color:#333;
+		@extend .font-icon;
+		&:after{
+			content: "\f040";
+			position: absolute;
+			right: 22px;
+			margin-top: 6px;
+		}
+		&.active{
+			background-color:$color-main;
+			color:#fff;
+		}
+	}
+	ul{
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+	}
+}
+
+/******************
+	 NEW ITEM
+******************/
+.new-item{
+	width:60%;
+	display:inline-block;
+	background-color:#fff;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+	padding:20px 40px;
+	&.new-item--edit{
+		button.new-item__delete{
+			display:block;
+		}
+	}
+	h2{
+		font-size: em(26);
+		font-weight:700;
+		text-align:center;
+		text-transform:uppercase;
+		margin-bottom:20px;
+	}
+	label{
+		margin-top:10px;
+		display:block;
+		padding-bottom:2px;
+		&[for="inputUser"]:after{
+			content:"\25be";
+			position: absolute;
+			right: 60px;
+			margin-top: 29px;
+			font-size: 22px;
+			cursor: pointer;
+		}
+	}
+	.new-item__input{
+		width:100%;
+		height: 40px;
+		padding-left: 20px;
+		padding-right: 80px;
+		font-size: em(16);
+		background: #fff;
+		border:1px solid #ccc;
+		outline-color:$color-main;
+		&::-webkit-input-placeholder {
+		   color:#ccc;
+		}
+		&:-moz-placeholder {
+		   color:#ccc;
+		}
+		&::-moz-placeholder {
+		   color:#ccc;
+		}
+		&:-ms-input-placeholder {
+		   color:#ccc;
+		}
+	}
+	select{
+		appearance:none;
+		border-radius:0;
+	}
+	option[value=""][disabled] {
+		display: none;
+	}
+	.new-item__btn-group{
+		float:right;
+	}
+	button{
+		padding:12px 40px;
+		border:0;
+		font-size: em(14);
+		text-transform:uppercase;
+		font-weight:bold;
+		margin-top:20px;
+		display: inline-block;
+		float: left;
+		cursor:pointer;
+		color:#333;
+		background-color:#ddd;
+		border-bottom:2px solid darken(#eee, 25%);
+		outline-color:#ddd;
+		@extend .font-icon;
+		&:after{
+			font-size:16px;
+		}
+		&.new-item__delete{
+			display:none;
+			background-color:#d05252;
+			border-bottom:2px solid darken(#d05252, 25%);
+			outline-color:#d05252;
+			color:#fff;
+			margin-right:10px;
+			&:after{
+				content: "\f00d";
+				margin-left: 4px;
+				vertical-align: -1px;
+			}
+		}
+		&.new-item__save{
+			background-color:$color-main;
+			border-bottom:2px solid darken($color-main, 25%);
+			outline-color:$color-main;
+			float:right;
+			color:#fff;
+			&:after{
+				content: "\e901";
+				margin-left: 4px;
+				vertical-align: -1px;
+			}
+		}
+	}
+}
+
+/*****************
+ INFORMATIVE TEXT
+******************/
+.informative-text{
+	margin-top: 150px;
+	.wrapper{
+		background-color:#fff;
+		padding:50px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+	}
+	b{
+		font-size: em(30);
+		display:block;
+	}
+	span{
+		display:block;
+		margin-top:15px;
+		i{
+			color:$color-main;
+			display:inline-block;
+			font-weight:700;
+		}
+	}
+}
+
+/****************
+	RESPONSIVE
+*****************/
+@media screen and (max-width: 992px) {
+  	body{
+  		font-size:15px;
+  	}
+}
+
+@media screen and (max-width: 768px) {
+ 	body{
+		font-size:14px;
+	}
+	.new-item button{
+		padding: 12px 20px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body{
+		padding-bottom:20px;
+	}
+	main{
+		.content{
+			flex-direction: column;
+		}
+	}
+	.result-list,
+	.new-item{
+		width:100%;
+	}
+	.new-item{
+		margin-top:20px;
+		button{
+			padding:12px 10px;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	main{
+		padding-top:120px;
+	}
+	.new-item{
+		padding:20px;
+		label[for=inputUser]:after{
+			right: 35px;
+			margin-top: 25px;
+		}
+	}
+	header{
+		.header__input{
+			padding-left:10px;
+			padding-right:120px;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.new-item{
+		button{
+			padding:12px 5px;
+		}
+	}
+}

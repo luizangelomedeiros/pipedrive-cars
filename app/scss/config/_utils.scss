@@ -1,0 +1,22 @@
+.wrapper{
+	position: relative;
+	left:50%;
+	margin-left: -590px;
+	width:1180px;
+}
+
+.flex{
+	display: flex;
+}
+
+.font-bold{
+	font-weight:bold;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper{
+  	width:90%;
+  	margin-left:5%;
+  	left:0;
+  }
+}
