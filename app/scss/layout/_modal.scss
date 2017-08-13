@@ -85,3 +85,15 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.modal__conteudo {
+		width:90% !important;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.modal__conteudo {
+		top:30%;
+	}
+}
